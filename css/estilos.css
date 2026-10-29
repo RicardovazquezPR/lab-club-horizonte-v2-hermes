@@ -59,6 +59,17 @@ h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
 .actividad[hidden], .aviso-vacio[hidden] { display: none; }
 .aviso-vacio { background: #fff; border: 1px dashed #9aa5b1; border-radius: 8px; padding: 1rem; text-align: center; font-weight: 700; }
 
+/* DEV0001 REQ-005: formulario de contacto. Campos a todo el ancho para no desbordar en movil. */
+.campo { margin: 0 0 1rem; }
+.campo label { display: block; font-weight: 700; margin-bottom: 0.25rem; }
+.campo input, .campo textarea { width: 100%; box-sizing: border-box; font: inherit; padding: 0.5rem 0.6rem; border: 1px solid #9aa5b1; border-radius: 6px; background: #fff; }
+.campo input[aria-invalid="true"], .campo textarea[aria-invalid="true"] { border-color: #b42318; border-width: 2px; }
+.error { color: #b42318; font-weight: 700; margin: 0.3rem 0 0; }
+.exito { background: #e6f4ea; border-left: 4px solid #1e7e34; color: #14532d; font-weight: 700; padding: 0.6rem 0.75rem; margin: 1rem 0 0; }
+.error[hidden], .exito[hidden] { display: none; }
+.boton { font: inherit; font-weight: 700; background: #1b4f8a; color: #fff; border: 0; border-radius: 6px; padding: 0.6rem 1.25rem; cursor: pointer; }
+.boton:focus-visible, .campo input:focus-visible, .campo textarea:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
+
 .aviso-ficticio { font-size: 0.85rem; color: #52606d; border-left: 4px solid #f0b429; background: #fffbea; padding: 0.5rem 0.75rem; margin: 1rem 0; }
 .pie { text-align: center; color: #52606d; font-size: 0.85rem; padding: 1rem; }
 

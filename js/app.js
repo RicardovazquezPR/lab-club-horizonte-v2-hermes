@@ -58,9 +58,74 @@ function iniciarActividades(doc, ahora) {
   vacio.hidden = visibles !== 0;
 }
 
+/* ---- DEV0001 REQ-005: formulario de contacto (validacion en el navegador) ---- */
+
+/* Formato minimo usuario@dominio.ext, sin espacios. No pretende cubrir todo el RFC. */
+function esCorreoValido(texto) {
+  return /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)+$/.test(texto || '');
+}
+
+/* Devuelve {campo: mensaje} solo con los campos que fallan. Vacio = todo valido.
+   Un valor de solo espacios cuenta como vacio. */
+function validarContacto(valores) {
+  var errores = {};
+  var nombre = (valores.nombre || '').trim();
+  var correo = (valores.correo || '').trim();
+  var mensaje = (valores.mensaje || '').trim();
+  if (!nombre) { errores.nombre = 'Escribe tu nombre.'; }
+  if (!correo) { errores.correo = 'Escribe tu correo.'; }
+  else if (!esCorreoValido(correo)) { errores.correo = 'El correo no tiene un formato válido.'; }
+  if (!mensaje) { errores.mensaje = 'Escribe tu mensaje.'; }
+  return errores;
+}
+
+/* Parte del DOM: solo corre si la pagina tiene el formulario. No envia nada a ningun servidor. */
+function iniciarContacto(doc) {
+  var form = doc.getElementById('form-contacto');
+  var exito = doc.getElementById('exito-contacto');
+  if (!form || !exito) { return; }
+  var campos = ['nombre', 'correo', 'mensaje'];
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var valores = {};
+    campos.forEach(function (c) { valores[c] = form.elements[c].value; });
+    var errores = validarContacto(valores);
+    var primero = null;
+    campos.forEach(function (c) {
+      var caja = doc.getElementById('error-' + c);
+      var entrada = form.elements[c];
+      if (errores[c]) {
+        caja.textContent = errores[c];
+        caja.hidden = false;
+        entrada.setAttribute('aria-invalid', 'true');
+        if (!primero) { primero = entrada; }
+      } else {
+        caja.textContent = '';
+        caja.hidden = true;
+        entrada.removeAttribute('aria-invalid');
+      }
+    });
+    if (primero) {
+      exito.hidden = true;
+      primero.focus();
+      return;
+    }
+    form.reset();
+    exito.hidden = false;
+  });
+  /* Al volver a escribir, el aviso de exito anterior ya no corresponde. */
+  form.addEventListener('input', function () { exito.hidden = true; });
+}
+
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { fechaIsoDeHoy: fechaIsoDeHoy, esFechaIso: esFechaIso, esPasada: esPasada, ordenarPorFecha: ordenarPorFecha };
+  module.exports = {
+    fechaIsoDeHoy: fechaIsoDeHoy, esFechaIso: esFechaIso, esPasada: esPasada, ordenarPorFecha: ordenarPorFecha,
+    esCorreoValido: esCorreoValido, validarContacto: validarContacto
+  };
 }
 if (typeof document !== 'undefined') {
-  document.addEventListener('DOMContentLoaded', function () { iniciarActividades(document); });
+  document.addEventListener('DOMContentLoaded', function () {
+    iniciarActividades(document);
+    iniciarContacto(document);
+  });
 }

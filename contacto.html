@@ -35,9 +35,36 @@
       </dl>
     </section>
 
+    <!-- DEV0001 REQ-005: formulario validado en el navegador (js/app.js). No envia nada a ningun servidor.
+         novalidate: los mensajes los controla app.js, junto a cada campo. -->
+    <section id="formulario">
+      <h2>Escríbenos</h2>
+      <form id="form-contacto" novalidate>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" aria-describedby="error-nombre">
+          <p class="error" id="error-nombre" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input id="correo" name="correo" type="email" autocomplete="email" aria-describedby="error-correo">
+          <p class="error" id="error-correo" hidden></p>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" aria-describedby="error-mensaje"></textarea>
+          <p class="error" id="error-mensaje" hidden></p>
+        </div>
+        <button type="submit" class="boton">Enviar</button>
+        <p id="exito-contacto" class="exito" role="status" hidden>Mensaje recibido</p>
+      </form>
+    </section>
+
     <p class="aviso-ficticio">Sitio de prueba: el correo, el aula y el horario son ficticios.</p>
   </main>
 
   <footer class="pie">Club de Estudiantes Horizonte · sitio de prueba</footer>
+
+  <script src="js/app.js"></script>
 </body>
 </html>

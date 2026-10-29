@@ -1,0 +1,48 @@
+/* DEV0001 REQ-007 / REQ-008: hoja de estilos unica y compartida por las 4 paginas.
+   Antes: no existia. Ahora: diseño fluido (sin anchos fijos, sin fuentes ni recursos externos).
+   Si se quita: las paginas pierden el menu adaptable y vuelve el desplazamiento horizontal a 375 px. */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.55;
+  color: #1f2933;
+  background: #f5f7fa;
+  overflow-wrap: anywhere;
+}
+img, table, input, textarea { max-width: 100%; }
+
+.cabecera { background: #1d4e89; color: #fff; padding: 0.75rem 1rem; }
+.cabecera .marca { font-weight: 700; font-size: 1.15rem; margin: 0 0 0.5rem; }
+.cabecera .marca a { color: #fff; text-decoration: none; }
+.menu ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.menu a {
+  display: block; padding: 0.5rem 0.85rem; color: #fff; text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.5); border-radius: 6px;
+}
+.menu a:hover, .menu a:focus { background: rgba(255,255,255,0.2); }
+.menu a[aria-current="page"] { background: #fff; color: #1d4e89; font-weight: 700; }
+
+main { width: 100%; max-width: 60rem; margin: 0 auto; padding: 1rem; }
+h1 { font-size: 1.6rem; margin: 0.5rem 0 0.75rem; color: #1d4e89; }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
+
+.portada { text-align: center; padding: 2rem 1rem; background: #fff; border-radius: 10px; border: 1px solid #d9e2ec; }
+.portada .lema { font-size: 1.15rem; color: #52606d; margin: 0 0 1rem; }
+.accesos { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+.accesos a {
+  display: block; padding: 0.9rem; background: #1d4e89; color: #fff; text-decoration: none;
+  border-radius: 8px; font-weight: 600;
+}
+.accesos a:hover, .accesos a:focus { background: #163a66; }
+
+.aviso-ficticio { font-size: 0.85rem; color: #52606d; border-left: 4px solid #f0b429; background: #fffbea; padding: 0.5rem 0.75rem; margin: 1rem 0; }
+.pie { text-align: center; color: #52606d; font-size: 0.85rem; padding: 1rem; }
+
+@media (min-width: 40rem) {
+  .cabecera { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .cabecera .marca { margin: 0; }
+  .accesos { grid-template-columns: repeat(3, 1fr); }
+  h1 { font-size: 2rem; }
+}

@@ -37,6 +37,18 @@ h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
 }
 .accesos a:hover, .accesos a:focus { background: #163a66; }
 
+/* DEV0001 REQ-002 / REQ-006: listas de valores y equipo, y datos de contacto.
+   Antes: no existian estas clases. Si se quitan: Equipo y Contacto pierden su formato pero siguen legibles. */
+.lista { padding-left: 1.2rem; margin: 0; }
+.equipo { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
+.equipo li { background: #fff; border: 1px solid #d9e2ec; border-radius: 8px; padding: 0.6rem 0.85rem; }
+.equipo .nombre { display: block; font-weight: 700; }
+.equipo .cargo { color: #52606d; }
+.datos { background: #fff; border: 1px solid #d9e2ec; border-radius: 8px; padding: 0.75rem 1rem; margin: 0; }
+.datos dt { font-weight: 700; margin-top: 0.5rem; }
+.datos dt:first-child { margin-top: 0; }
+.datos dd { margin: 0; }
+
 .aviso-ficticio { font-size: 0.85rem; color: #52606d; border-left: 4px solid #f0b429; background: #fffbea; padding: 0.5rem 0.75rem; margin: 1rem 0; }
 .pie { text-align: center; color: #52606d; font-size: 0.85rem; padding: 1rem; }
 
@@ -44,5 +56,6 @@ h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
   .cabecera { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
   .cabecera .marca { margin: 0; }
   .accesos { grid-template-columns: repeat(3, 1fr); }
+  .equipo { grid-template-columns: repeat(2, 1fr); }
   h1 { font-size: 2rem; }
 }

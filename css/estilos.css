@@ -49,6 +49,16 @@ h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
 .datos dt:first-child { margin-top: 0; }
 .datos dd { margin: 0; }
 
+/* DEV0001 REQ-003/REQ-004: tarjetas de actividades y mensaje cuando no hay ninguna.
+   [hidden] se refuerza porque display:grid de otras reglas lo anularia. */
+.actividades { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+.actividad { background: #fff; border: 1px solid #d9e2ec; border-radius: 8px; padding: 0.75rem 1rem; }
+.actividad h2 { margin: 0 0 0.25rem; font-size: 1.1rem; }
+.actividad p { margin: 0.2rem 0; }
+.actividad .lugar { color: #52606d; }
+.actividad[hidden], .aviso-vacio[hidden] { display: none; }
+.aviso-vacio { background: #fff; border: 1px dashed #9aa5b1; border-radius: 8px; padding: 1rem; text-align: center; font-weight: 700; }
+
 .aviso-ficticio { font-size: 0.85rem; color: #52606d; border-left: 4px solid #f0b429; background: #fffbea; padding: 0.5rem 0.75rem; margin: 1rem 0; }
 .pie { text-align: center; color: #52606d; font-size: 0.85rem; padding: 1rem; }
 
@@ -57,5 +67,6 @@ h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
   .cabecera .marca { margin: 0; }
   .accesos { grid-template-columns: repeat(3, 1fr); }
   .equipo { grid-template-columns: repeat(2, 1fr); }
+  .actividades { grid-template-columns: repeat(2, 1fr); }
   h1 { font-size: 2rem; }
 }

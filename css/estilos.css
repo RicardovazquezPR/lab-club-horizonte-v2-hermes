@@ -81,3 +81,61 @@ h2 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
   .actividades { grid-template-columns: repeat(2, 1fr); }
   h1 { font-size: 2rem; }
 }
+
+/* DEV0002 REQ 3194-3196, 3201: calendario (vista de mes y de lista), filtros y detalle.
+   Antes: no existian estas clases. Si se quitan: calendario.html pierde la rejilla pero sigue siendo usable. */
+.solo-lectores { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.barra-calendario { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: space-between; margin: 0.5rem 0 1rem; }
+.grupo-vista, .grupo-mes { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.etiqueta-mes { margin: 0; font-size: 1.1rem; min-width: 10rem; text-align: center; text-transform: capitalize; }
+.boton-sec { background: #fff; color: #1d4e89; border: 2px solid #1d4e89; }
+.boton-sec[aria-pressed="true"] { background: #1d4e89; color: #fff; }
+.boton:focus-visible, .chip:focus-visible, .item-boton:focus-visible, .casilla input:focus-visible, .detalle:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
+.filtros { background: #fff; border: 1px solid #d9e2ec; border-radius: 8px; padding: 0.5rem 0.75rem; margin: 0 0 1rem; }
+.filtros legend { font-weight: 700; padding: 0 0.25rem; }
+.casilla { display: inline-block; margin: 0.25rem 0.75rem 0.25rem 0; padding: 0.25rem 0.5rem; border-left: 6px solid #9aa5b1; background: #f5f7fa; }
+.casilla input { width: 1.1rem; height: 1.1rem; vertical-align: middle; }
+.categoria-0 { border-left-color: #1d4e89; } .categoria-1 { border-left-color: #1e7e34; }
+.categoria-2 { border-left-color: #b45309; } .categoria-3 { border-left-color: #7c3aed; }
+.rejilla { width: 100%; border-collapse: collapse; table-layout: fixed; background: #fff; }
+.rejilla th { background: #e4ecf5; padding: 0.3rem; font-size: 0.85rem; text-transform: uppercase; }
+.rejilla td { border: 1px solid #d9e2ec; vertical-align: top; padding: 0.15rem; height: 4.5rem; }
+.rejilla td.fuera { background: #f0f2f5; }
+.rejilla td.hoy { background: #fffbea; }
+.rejilla .num { display: block; font-size: 0.8rem; color: #52606d; font-weight: 700; }
+.chip { display: block; width: 100%; text-align: left; font: inherit; font-size: 0.75rem; line-height: 1.2; margin: 0.15rem 0; padding: 0.2rem 0.25rem; background: #e4ecf5; color: #102a43; border: 0; border-left: 4px solid #1d4e89; border-radius: 3px; cursor: pointer; overflow: hidden; text-overflow: ellipsis; }
+.lista-actividades { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.item-boton { display: block; width: 100%; text-align: left; font: inherit; background: #fff; border: 1px solid #d9e2ec; border-radius: 8px; padding: 0.6rem 0.85rem; cursor: pointer; }
+.item-fecha, .item-lugar { display: block; color: #52606d; font-size: 0.9rem; }
+.item-titulo { display: block; font-weight: 700; }
+.detalle { background: #fff; border: 2px solid #1d4e89; border-radius: 8px; padding: 0.75rem 1rem; margin: 1rem 0; }
+.detalle[hidden] { display: none; }
+.detalle h2 { margin-top: 0; }
+.acciones { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.aviso-datos { background: #fffbea; border-left: 4px solid #f0b429; padding: 0.5rem 0.75rem; margin: 0.5rem 0; }
+@media (max-width: 40rem) {
+  .rejilla td { height: 3.5rem; }
+  .chip { font-size: 0; padding: 0; height: 0.6rem; margin: 0.1rem 0; }
+  .chip::before { content: ""; }
+}
+
+/* DEV0002 REQ 3197-3199, 3201: pagina de inscripcion. Antes: no existian estas clases.
+   Si se quitan: errores de campo, estado Agotada y selector sin estilo (siguen funcionando). */
+.error-campo { color: #b42318; font-weight: 700; margin: 0.3rem 0 0; min-height: 0; }
+.error-campo:empty { display: none; }
+select { font: inherit; padding: 0.5rem 0.6rem; border: 1px solid #9aa5b1; border-radius: 6px; background: #fff; max-width: 100%; box-sizing: border-box; }
+select:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
+.estado-agotada { background: #fde8e8; border-left: 4px solid #b42318; color: #7a1a12; font-weight: 700; padding: 0.6rem 0.75rem; }
+.resumen-actividad { background: #fff; border: 1px solid #d9e2ec; border-radius: 8px; padding: 0.6rem 0.85rem; }
+.resultado-insc:not(:empty) { background: #e8f0fa; border-left: 4px solid #1b4f8a; font-weight: 700; padding: 0.6rem 0.75rem; }
+a.boton { display: inline-block; text-decoration: none; }
+#errores:empty { display: none; }
+
+/* DEV0002 REQ 3200, 3201: resumen de inscripciones. Antes: no existian estas clases. */
+.grupo-resumen { margin: 1.5rem 0; }
+.plazas-resumen { font-weight: 700; }
+.tabla-scroll { overflow-x: auto; }
+.tabla-resumen { border-collapse: collapse; width: 100%; background: #fff; }
+.tabla-resumen th, .tabla-resumen td { border: 1px solid #9aa5b1; padding: 0.4rem 0.6rem; text-align: left; overflow-wrap: anywhere; }
+.tabla-resumen th { background: #e4ecf5; }
+.boton:disabled { background: #52606d; cursor: not-allowed; }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resumen de inscripciones · Club de Estudiantes Horizonte</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- DEV0002 REQ 3200, 3201: resumen de inscripciones por actividad y exportacion a CSV. -->
+  <header class="cabecera">
+    <p class="marca"><a href="index.html">Club de Estudiantes Horizonte</a></p>
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="calendario.html">Calendario</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Resumen de inscripciones</h1>
+    <div id="errores" role="alert"></div>
+    <p>
+      <button type="button" class="boton" id="exportar">Descargar CSV</button>
+    </p>
+    <p id="estado-resumen" role="status"></p>
+    <div id="resumen"></div>
+    <p><a href="calendario.html">Volver al calendario</a> · <a href="inscripcion.html">Inscribirme</a></p>
+    <p class="aviso-ficticio">Sitio de prueba: este resumen muestra solo las inscripciones guardadas en este navegador.</p>
+  </main>
+
+  <footer class="pie">Club de Estudiantes Horizonte · sitio de prueba</footer>
+
+  <script src="js/actividades.js"></script>
+  <script src="js/calendario.js"></script>
+  <script src="js/inscripcion.js"></script>
+  <script src="js/exportar.js"></script>
+  <script src="js/pagina-resumen.js"></script>
+</body>
+</html>

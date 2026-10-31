@@ -1,0 +1,92 @@
+{
+  "actividades": [
+    {
+      "id": "act-001",
+      "titulo": "Taller de estudio en grupo",
+      "categoria": "Académica",
+      "fecha": "2026-11-03",
+      "horaInicio": "17:00",
+      "horaFin": "18:30",
+      "lugar": "Aula 204, edificio B",
+      "cupo": 20,
+      "descripcion": "Técnicas para estudiar en equipo antes de los exámenes."
+    },
+    {
+      "id": "act-002",
+      "titulo": "Torneo de fútbol sala",
+      "categoria": "Deportiva",
+      "fecha": "2026-11-07",
+      "horaInicio": "10:00",
+      "horaFin": "13:00",
+      "lugar": "Cancha techada",
+      "cupo": 16,
+      "descripcion": "Torneo abierto a todos los socios, equipos de cuatro."
+    },
+    {
+      "id": "act-003",
+      "titulo": "Cine-foro estudiantil",
+      "categoria": "Cultural",
+      "fecha": "2026-11-12",
+      "horaInicio": "19:00",
+      "horaFin": "21:30",
+      "lugar": "Aula 101, edificio A",
+      "cupo": 30,
+      "descripcion": "Proyección y debate posterior."
+    },
+    {
+      "id": "act-004",
+      "titulo": "Jornada de limpieza del parque",
+      "categoria": "Voluntariado",
+      "fecha": "2026-11-14",
+      "horaInicio": "09:00",
+      "horaFin": "12:00",
+      "lugar": "Parque del campus",
+      "cupo": 25,
+      "descripcion": "Traer guantes; se facilitan bolsas."
+    },
+    {
+      "id": "act-005",
+      "titulo": "Charla: cómo preparar un proyecto final",
+      "categoria": "Académica",
+      "fecha": "2026-11-18",
+      "horaInicio": "18:30",
+      "horaFin": "20:00",
+      "lugar": "Auditorio pequeño",
+      "cupo": 40,
+      "descripcion": "Planificación, tutor y defensa."
+    },
+    {
+      "id": "act-006",
+      "titulo": "Noche de talentos",
+      "categoria": "Cultural",
+      "fecha": "2026-11-21",
+      "horaInicio": "19:30",
+      "horaFin": "22:00",
+      "lugar": "Patio central",
+      "cupo": 50,
+      "descripcion": "Música, poesía y humor de los socios."
+    },
+    {
+      "id": "act-007",
+      "titulo": "Taller de primeros auxilios",
+      "categoria": "Voluntariado",
+      "fecha": "2026-11-25",
+      "horaInicio": "16:00",
+      "horaFin": "18:00",
+      "lugar": "Sala de usos múltiples",
+      "cupo": 2,
+      "descripcion": "Plazas muy limitadas (2)."
+    },
+    {
+      "id": "act-008",
+      "titulo": "Carrera 5K del club",
+      "categoria": "Deportiva",
+      "fecha": "2026-11-28",
+      "horaInicio": "08:30",
+      "horaFin": "10:30",
+      "lugar": "Explanada principal",
+      "cupo": 60,
+      "descripcion": "Recorrido de 5 km por el campus."
+    }
+  ]
+}

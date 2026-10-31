@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscripción a una actividad · Club de Estudiantes Horizonte</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- DEV0002 REQ 3197-3199, 3201: formulario de inscripcion con validacion, cupos y localStorage. -->
+  <header class="cabecera">
+    <p class="marca"><a href="index.html">Club de Estudiantes Horizonte</a></p>
+    <nav class="menu" aria-label="Menú principal">
+      <ul>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="calendario.html">Calendario</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Inscripción a una actividad</h1>
+
+    <div id="errores" role="alert"></div>
+
+    <p>
+      <label for="actividad">Actividad</label><br>
+      <select id="actividad" name="actividad"></select>
+    </p>
+    <p id="resumen-actividad" class="resumen-actividad" aria-live="polite"></p>
+    <p id="agotada" class="estado-agotada" role="status" hidden>Agotada: esta actividad ya no tiene plazas.</p>
+
+    <form id="formulario" novalidate>
+      <div class="campo">
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" name="nombre" type="text" autocomplete="name" aria-describedby="error-nombre">
+        <p class="error-campo" id="error-nombre"></p>
+      </div>
+      <div class="campo">
+        <label for="correo">Correo electrónico</label>
+        <input id="correo" name="correo" type="email" autocomplete="email" aria-describedby="error-correo">
+        <p class="error-campo" id="error-correo"></p>
+      </div>
+      <div class="campo">
+        <label for="estudiante">Número de estudiante</label>
+        <input id="estudiante" name="estudiante" type="text" inputmode="numeric" aria-describedby="error-estudiante">
+        <p class="error-campo" id="error-estudiante"></p>
+      </div>
+      <button type="submit" class="boton" id="enviar">Inscribirme</button>
+    </form>
+
+    <p id="resultado" class="resultado-insc" role="status"></p>
+    <p><a href="calendario.html">Volver al calendario</a> · <a href="resumen.html">Ver resumen de inscripciones</a></p>
+    <p class="aviso-ficticio">Sitio de prueba: las inscripciones se guardan solo en este navegador y no se envía ningún dato.</p>
+  </main>
+
+  <footer class="pie">Club de Estudiantes Horizonte · sitio de prueba</footer>
+
+  <script src="js/actividades.js"></script>
+  <script src="js/calendario.js"></script>
+  <script src="js/inscripcion.js"></script>
+  <script src="js/pagina-inscripcion.js"></script>
+</body>
+</html>

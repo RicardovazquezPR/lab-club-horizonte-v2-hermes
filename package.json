@@ -1,0 +1,16 @@
+{
+  "name": "lab-club-horizonte-v2-hermes",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Club de Estudiantes Horizonte v2 (sitio de prueba): calendario, inscripcion y resumen.",
+  "scripts": {
+    "test:unit": "node --test pruebas/unitarias/",
+    "test:v1": "node pruebas/prueba-fechas.js && node pruebas/prueba-contacto.js",
+    "test:navegador": "node --test --test-concurrency=1 pruebas/navegador/",
+    "test": "npm run test:unit && npm run test:v1 && npm run test:navegador"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.2",
+    "playwright": "1.64.1"
+  }
+}

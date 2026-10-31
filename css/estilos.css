@@ -130,3 +130,12 @@ select:focus-visible { outline: 3px solid #f0b429; outline-offset: 2px; }
 .resultado-insc:not(:empty) { background: #e8f0fa; border-left: 4px solid #1b4f8a; font-weight: 700; padding: 0.6rem 0.75rem; }
 a.boton { display: inline-block; text-decoration: none; }
 #errores:empty { display: none; }
+
+/* DEV0002 REQ 3200, 3201: resumen de inscripciones. Antes: no existian estas clases. */
+.grupo-resumen { margin: 1.5rem 0; }
+.plazas-resumen { font-weight: 700; }
+.tabla-scroll { overflow-x: auto; }
+.tabla-resumen { border-collapse: collapse; width: 100%; background: #fff; }
+.tabla-resumen th, .tabla-resumen td { border: 1px solid #9aa5b1; padding: 0.4rem 0.6rem; text-align: left; overflow-wrap: anywhere; }
+.tabla-resumen th { background: #e4ecf5; }
+.boton:disabled { background: #52606d; cursor: not-allowed; }

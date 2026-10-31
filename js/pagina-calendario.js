@@ -87,6 +87,7 @@
     var dl = $('detalle-datos'); vaciar(dl);
     [['Fecha', Calendario.fechaLarga(a.fecha)], ['Hora', a.horaInicio + ' a ' + a.horaFin], ['Lugar', a.lugar], ['Categoría', a.categoria], ['Cupo', a.cupo + ' plazas']]
       .forEach(function (p) { dl.appendChild(el('dt', null, p[0])); dl.appendChild(el('dd', null, p[1])); });
+    $('enlace-inscripcion').setAttribute('href', 'inscripcion.html?actividad=' + encodeURIComponent(a.id));
     $('detalle').hidden = false;
     $('detalle').focus();
   }

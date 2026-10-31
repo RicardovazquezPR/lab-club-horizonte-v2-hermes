@@ -1,0 +1,34 @@
+name: Pruebas
+
+# DEV0002 tarea 5097. Ejecuta todas las pruebas del sitio en cada push y pull request a main.
+# La publicacion no se hace aqui: GitHub Pages sirve la rama main (raiz), asi que fusionar a main publica.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Instalar Chromium de Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Pruebas unitarias
+        run: npm run test:unit
+      - name: Pruebas del sitio v1 (fechas y contacto)
+        run: npm run test:v1
+      - name: Pruebas de navegador y accesibilidad (axe-core)
+        run: npm run test:navegador
